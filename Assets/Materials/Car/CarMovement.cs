@@ -4,11 +4,24 @@ using UnityEngine;
 
 public class CarMovement : MonoBehaviour
 {
-    public Vector3 start;
+    public GameObject Carfab;
+    public Transform CarStart1;
+    public Transform CarStart2;
+    public Transform CarStart3;
+    public Transform CarStart4;
+    public Transform CarStart5;
+    public List<Transform> locations;
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Oscillate());
+        locations.Add(CarStart1);
+        locations.Add(CarStart2);
+        locations.Add(CarStart3);
+        locations.Add(CarStart4);
+        locations.Add(CarStart5);
+
+        StartCoroutine(CarGeneration());
     }
 
     // Update is called once per frame
@@ -17,18 +30,12 @@ public class CarMovement : MonoBehaviour
         
     }
 
-    public IEnumerator Oscillate()
+    public IEnumerator CarGeneration()
     {
-        //float speed = Time.deltaTime * 5f;
-        for(float i= 0; i < 60; i += Time.deltaTime*5f)
+        while (true)
         {
-            transform.position += new Vector3(0f, 0f, Time.deltaTime*5f);
-            yield return null;
-        }
-        for (float i = 0; i < 60; i += Time.deltaTime * 5f)
-        {
-            transform.position -= new Vector3(0f, 0f, Time.deltaTime * 5f);
-            yield return null;
+            Instantiate(Carfab, locations[Random.Range(0, 5)].position, Quaternion.identity, transform.parent);
+            yield return new WaitForSeconds(2f);
         }
     }
 }
