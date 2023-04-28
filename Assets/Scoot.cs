@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class Scoot : MonoBehaviour
 {
+    public const float TIME_TO_EXPLOSION = 3f;
+    public const float CAR_ENERGY = 20f;
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(transform.gameObject, 12f);
+        Destroy(transform.gameObject, TIME_TO_EXPLOSION);
         StartCoroutine(Run());
     }
 
     public IEnumerator Run()
     {
-        for (float i = 0; i < 60; i += Time.deltaTime * 5f)
+        for (float i = 0; i < TIME_TO_EXPLOSION; i += Time.deltaTime)
         {
-            transform.position += new Vector3(0f, 0f, Time.deltaTime * 5f);
+            transform.position += new Vector3(0f, 0f, Time.deltaTime * CAR_ENERGY);
             yield return null;
         }
     }

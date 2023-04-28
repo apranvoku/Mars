@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 76f6bb89b559cdb43a0de04dfdff6993
+  - enabled: 1
+    path: Assets/CrossyRoad.unity
+    guid: e9e42972091c8b84b98703bfe8dc4ac7
   m_configObjects: {}

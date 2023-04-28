@@ -35,7 +35,7 @@ public class CarMovement : MonoBehaviour
         while (true)
         {
             Instantiate(Carfab, locations[Random.Range(0, 5)].position, Quaternion.identity, transform.parent);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }
