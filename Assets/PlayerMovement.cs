@@ -73,7 +73,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (colliders.Length != 0)
         {
-            
             if (jump_command && vertical_velocity <= 0)
                 vertical_velocity = JVEL;
 

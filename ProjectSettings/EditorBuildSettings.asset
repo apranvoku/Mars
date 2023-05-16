@@ -9,6 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 76f6bb89b559cdb43a0de04dfdff6993
   - enabled: 1
-    path: Assets/CrossyRoad.unity
+    path: Assets/Scenes/CrossyRoad.unity
     guid: e9e42972091c8b84b98703bfe8dc4ac7
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 30a5d8a9c5ae856469ee48a20e7303c3, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 804ce67c669202145b8a00d3f5e65027, type: 2}

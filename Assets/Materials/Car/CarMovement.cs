@@ -5,22 +5,11 @@ using UnityEngine;
 public class CarMovement : MonoBehaviour
 {
     public GameObject Carfab;
-    public Transform CarStart1;
-    public Transform CarStart2;
-    public Transform CarStart3;
-    public Transform CarStart4;
-    public Transform CarStart5;
-    public List<Transform> locations;
+    public Transform CarStart;
 
     // Start is called before the first frame update
     void Start()
     {
-        locations.Add(CarStart1);
-        locations.Add(CarStart2);
-        locations.Add(CarStart3);
-        locations.Add(CarStart4);
-        locations.Add(CarStart5);
-
         StartCoroutine(CarGeneration());
     }
 
@@ -34,8 +23,12 @@ public class CarMovement : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(Carfab, locations[Random.Range(0, 5)].position, Quaternion.identity, transform.parent);
-            yield return new WaitForSeconds(0.5f);
+            int random = Random.Range(0, 5);
+            if(random < 1)
+            {
+                Instantiate(Carfab, CarStart.position, CarStart.transform.rotation, transform);
+            }
+            yield return new WaitForSeconds(Random.Range(0f, 1f) + 0.5f);
         }
     }
 }
